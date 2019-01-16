@@ -31,6 +31,18 @@ How to install and use:
   $ portable-tetex1-v3/texmf.bin/dvips hello
   $ portable-tetex1-v3/texmf.bin/pdflatex hello
 
+All commands which were released in teTeX are available in the texmf.bin
+directory and work in portable-tetex, except for GUI tools (e.g. xdvi,
+oxdvi, mfw, texshow).
+
+In addition to the teTeX commands, portable-tetex contains Ghostscript 9.05
+(available as texmf.bin/gs, works with by texmf.bin/epstopdf). The GUI
+fetures (e.g. drawing the PostScript document on screen) are missing from
+the Ghostscript in portable-tetex.
+
+portable-tetex also contains Perl 5.10 and Busybox 1.21 (containing a shell
+commands such as mkdir), but these comamnds are not exposed to the user.
+
 teTeX versions and their packages in Debian releases:
 
 * teTeX 1.0 was released in 1999-06:
