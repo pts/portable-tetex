@@ -77,6 +77,8 @@ Progress and TODOs:
 * DONE: Removed applets which are not needed (e.g. acpid, fdformat,
   kbd_mode, anything in /sbin and /usr/sbin) from busybox. Kept only what
   was definitely needed (grepped, see busybox_used.lst).
+* TODO: Move changes from Perl scripts to __tmperl.pm
+* TODO: Move changes from texmf.cnf to __tm*.
 * TODO: Do tetex3.
 * TODO: Copy texmf.etc to tetex1-v4.
 * TOOD: Implement __tm* trampolines using xstatic gcc rather than /bin/sh.
@@ -135,5 +137,7 @@ Useful shell commands:
 * find portable-tetex2-doc -type l -name '*.gz' | perl -ne 'chomp; my $r = readlink($_); die "$_" if !defined($r); $r !~ s@[.]gz$@@; unlink $_; die if !s@[.]gz$@@; unlink $_; die "$_\n" if !symlink($r, $_)'
 * time 7z a -sfx../../../../../../../../"$PWD"/../tiny7zx -t7z -mx=7 -ms=32m -ms=on ../portable-tetex1-v1.sfx.7z portable-tetex1
 * cat $(grep -lE '^#! ?/bin/sh' texmf.lib/bin/*) | perl -ne 'our %h; while (m@([.-\w]+)@g) { next if exists $h{$1}; print "$1\n"; $h{$1} = 1 }' | sort >/tmp/a
+* find portable-tetex?-{doc,src} -type f | xargs -d '\n' -- chmod 644 --
+* find portable-tetex?-{doc,src} -type d | xargs -d '\n' -- chmod 755 --
 
 __END__

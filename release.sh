@@ -26,14 +26,4 @@ chmod 755 "$D/portable-${D##*/}.sfx.7z.tmp"
 rm -f "release/portable-${D##*/}-$S.sfx.7z"
 mv "$D/portable-${D##*/}.sfx.7z.tmp" "release/portable-${D##*/}.sfx.7z"
 
-for S in doc src; do
-  rm -f "release/portable-${DNV##*/}-$S.sfx.7z.tmp"
-  # -ms=64m makes it <100 bytes smaller than -ms=32m, so using -ms32m to save
-  # memory during decompression (64-32 MiB will be saved).
-  (cd "${DNV%/*}" && time 7z a -sfx"$RPWD"/source/tiny7zx -t7z -mx=7 -ms=32m -ms=on "portable-${DNV##*/}-$S.sfx.7z.tmp" "portable-${DNV##*/}-$S") || exit "$?"
-  chmod 755 "${DNV%/*}/portable-${DNV##*/}-$S.sfx.7z.tmp"
-  rm -f "release/portable-${DNV##*/}-$S.sfx.7z"
-  mv "${DNV%/*}/portable-${DNV##*/}-$S.sfx.7z.tmp" "release/portable-${DNV##*/}-$S.sfx.7z"
-done
-
 : release.sh OK.
