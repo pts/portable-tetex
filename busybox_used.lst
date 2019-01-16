@@ -1,0 +1,62 @@
+-bzip2 (texdoc)
+-clear (texconfig)
+-comm (texconfig)
+-dc
+-ed (texconfig)
+-expr (texconfig)
+-expand
+-gzip
+-init
+-install
+-last
+-less (texconfig)
+-lpr
+-more
+-passwd
+-reset (texconfig)
+-rx
+-script
+-strings
+-stty (texconfig)
+-sum
+-time
+-unzip (texdoc)
+-which
+-zcat (texconfig)
+
+awk
+basename
+cat
+chmod
+cmp
+cp
+date
+dirname
+echo
+egrep
+false
+find
+grep
+head
+ln
+ls
+mkdir
+mv
+printf
+pwd
+readlink
+rm
+rmdir
+sed
+sh
+sleep
+sort
+tail
+tee
+test
+touch
+tr
+true
+tty
+uname
+yes
