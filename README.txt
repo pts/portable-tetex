@@ -33,7 +33,9 @@ How to install and use:
 
 All commands which were released in teTeX are available in the texmf.bin
 directory and work in portable-tetex, except for GUI tools (e.g. xdvi,
-oxdvi, mfw, texshow).
+oxdvi, mfw, texshow) and texconfig (including texconfig-dialog and
+texconfig-sys; has multiple unshipped dependencies, doesn't have writable
+directories).
 
 In addition to the teTeX commands, portable-tetex contains Ghostscript 9.05
 (available as texmf.bin/gs, works with by texmf.bin/epstopdf). The GUI
@@ -45,8 +47,17 @@ commands such as mkdir), but these comamnds are not exposed to the user.
 
 teTeX versions and their packages in Debian releases:
 
+* teTeX had some releases before 1.0, these are not covered by
+  portable-tetex:
+  * teTeX 0.2 was released in 1994-11:
+    http://ftp.math.utah.edu/pub/tex/historic/systems/teTeX/teTeX-0.2/base1/README
+  * teTeX 0.3.3 was released in 1996-07:
+    http://ftp.math.utah.edu/pub/tex/historic/systems/teTeX/teTeX-0.3.4/ChangeLog
+  * teteX 0.4 was released in 1997-03:
+    http://ftp.math.utah.edu/pub/tex/historic/systems/teTeX/teTeX-0.4/ChangeLog
 * teTeX 1.0 was released in 1999-06:
   http://ftp.math.utah.edu/pub/tex/historic/systems/teTeX/teTeX-1.0/distrib/ANNOUNCE
+  This isn't covered by portable-tetex either.
 * Debian 3.0 Woody has teTeX 1.0.7.
   teTeX 1.0.7 was released in 2000-04:
   see timestamp of teTeX-src-1.0.7.tar.gz in http://ftp.math.utah.edu/pub/tex/historic/systems/teTeX/teTeX-1.0/distrib/sources/
@@ -77,6 +88,13 @@ Progress and TODOs:
 * DONE: Removed applets which are not needed (e.g. acpid, fdformat,
   kbd_mode, anything in /sbin and /usr/sbin) from busybox. Kept only what
   was definitely needed (grepped, see busybox_used.lst).
+* TODO: does libfontconfig.so.1 in tetex3 try to read global fonts.conf?
+* TODO: libpaper.so.1 shouldn't be reading config files from /etc
+        (/etc/papersize; use the $PAPERSIZE environment variable instead)
+* TODO: Mention the string portable-tetex in each original file.
+        Especially in texmf.etc/texmf.cnf
+        Especially shell scripts from which /bin/ksh, /bin/sh5 was removed.
+* TODO: Make texconfig work (chmod +w?).
 * TODO: Move changes from Perl scripts to __tmperl.pm
 * TODO: Move changes from texmf.cnf to __tm*.
 * TODO: Do tetex3.
@@ -96,7 +114,8 @@ Removed tools:
 * tetex-xwarn depends on libX11 etc.
 * texdoctk depends on libX11 etc.
 * texfind depends on libX11 etc.
-* texshow is a Perl script which uses Tk (not available, would need X11).
+* texshow is a Perl script which uses Tk (not available, would need X11),
+  also in tetex3 it uses XML::Parser.
 * xdvizilla is a shell script which runs executables which need X11.
 
 What else is missing:
