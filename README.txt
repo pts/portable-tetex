@@ -2,13 +2,13 @@ portable-tetex: teTeX binaries for new and old Linux systems
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 portable-tetex is a software distribution of teTeX for i386 Linux. It aims
 to work conveniently on any Linux released between 1999 and 2019 and beyond.
-teTeX is distrubution of TeX (including latex, dvips, pdflatex, mpost etc.)
+teTeX is distribution of TeX (including latex, dvips, pdflatex, mpost etc.)
 for Unix systems by Thomas Esser, with 6 major releases between 1994 and
 2005, and officially retired and unsupported since then. portable-tetex
 brings the old teTeX binaries (from version 1.0.7 in 2000) back to life.
 portable-tetex is useful for compiling old .tex documents reliably, to
 reproduce the original output files (.dvi, .ps and .pdf). For writing new
-documents, modern, up-to-date TeX distributions (e.g TeX Live) are
+documents, modern, up-to-date TeX distributions (e.g. TeX Live) are
 recommended instead.
 
 portable-tetex was started by pts@fazekas.hu on 2018-07-23.
