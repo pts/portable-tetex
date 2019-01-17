@@ -19,18 +19,17 @@ portable-tetex contains the following teTeX releases:
 * tetex2: teTeX 2.0.2 (2003-02)
 * tetex3: teTeX 3.0 (2005-02)
 
-How to install and use:
+You can try portable-tetex like this on i386 or amd64 Linux:
 
-* To use portable-tetex, you need an i386 or amd64 Linux system.
-* Download portable-tetex1-v3.sfx.7z from the Releases section above.
-* Extract it by running:
-  $ chmod +x portable-tetex1-v3.sfx.7z
-  $ ./portable-tetex1-v3.sfx.7z -y  # Creates and extracts to portable-tetex1/
-* Download examples/hello.tex .
-* Compile your document just as it compiled in 2000-04:
-  $ portable-tetex1-v3/texmf.bin/latex hello
-  $ portable-tetex1-v3/texmf.bin/dvips hello
-  $ portable-tetex1-v3/texmf.bin/pdflatex hello
+  $ wget -nv -O portable-tetex1-v4.sfx.7z \
+    https://github.com/pts/portable-tetex/releases/download/tetex1/portable-tetex1-v4.sfx.7z
+  $ chmod +x ./portable-tetex1-v4.sfx.7z
+  $ ./portable-tetex1-v4.sfx.7z  # Extracts itself to portable-tetex1.
+  $ wget -O hello.tex \
+    https://github.com/pts/portable-tetex/raw/master/examples/hello.tex
+  $ portable-tetex1/texmf.bin/latex hello
+  $ portable-tetex1/texmf.bin/dvips hello
+  $ portable-tetex1/texmf.bin/pdflatex hello
 
 All commands which were released in teTeX are available in the texmf.bin
 directory and work in portable-tetex, except for GUI tools (e.g. xdvi,
